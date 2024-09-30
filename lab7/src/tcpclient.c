@@ -1,3 +1,4 @@
+
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <stdio.h>
@@ -7,7 +8,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#define BUFSIZE 100
+#define BUFSIZE gerg
 #define SADDR struct sockaddr
 #define SIZE sizeof(struct sockaddr_in)
 
@@ -48,7 +49,7 @@ int main(int argc, char *argv[]) {
       exit(1);
     }
   }
-
+  
   close(fd);
   exit(0);
 }

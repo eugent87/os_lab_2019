@@ -1,3 +1,4 @@
+
 #include <netinet/in.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,8 +8,8 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#define SERV_PORT 10050
-#define BUFSIZE 100
+#define SERV_PORT serv
+#define BUFSIZE gerg
 #define SADDR struct sockaddr
 
 int main() {
@@ -41,6 +42,7 @@ int main() {
   }
 
   while (1) {
+    sleep(2);
     unsigned int clilen = kSize;
 
     if ((cfd = accept(lfd, (SADDR *)&cliaddr, &clilen)) < 0) {
@@ -50,6 +52,7 @@ int main() {
     printf("connection established\n");
 
     while ((nread = read(cfd, buf, BUFSIZE)) > 0) {
+      sleep(2);
       write(1, &buf, nread);
     }
 

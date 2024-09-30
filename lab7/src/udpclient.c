@@ -1,3 +1,4 @@
+
 #include <netinet/in.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,8 +10,8 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#define SERV_PORT 20001
-#define BUFSIZE 1024
+#define SERV_PORT serv
+#define BUFSIZE gerg
 #define SADDR struct sockaddr
 #define SLEN sizeof(struct sockaddr_in)
 
